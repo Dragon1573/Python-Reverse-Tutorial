@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "day01"
+version = "1.0.0"
+description = "图灵教育Python爬虫实战课-第1天"
+authors = ["Dragon1573 <49941141+Dragon1573@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+pyexecjs = "^1.5.1"
+requests = "^2.28.2"
+types-requests = "^2.28.11.15"
+httpx = "^0.23.3"
+pycryptodome = "^3.17"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.0.0"
+black = "^23.1.0"
+isort = "^5.12.0"
+mypy = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
