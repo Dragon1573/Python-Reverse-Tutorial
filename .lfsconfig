@@ -1,2 +1,4 @@
 [lfs]
-url = "file:///mnt/d/OneDrive/应用/Git-LFS-One/Python-Reverse-Tutorial"
+# Server only provides pull support.
+# Will fail if you try to push something.
+url = "https://lfs.v.ariant.cn/LWH8mdMv8gs/Python-Reverse-Tutorial.git"
