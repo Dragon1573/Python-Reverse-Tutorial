@@ -1,8 +1,13 @@
 {
   "packageManager": "yarn@3.5.0",
   "dependencies": {
+    "@babel/generator": "^7.21.4",
+    "@babel/parser": "^7.21.4",
+    "@babel/traverse": "^7.21.4",
+    "@babel/types": "^7.21.4",
     "canvas": "^2.11.0",
     "crypto-js": "^4.1.1",
-    "jsdom": "^21.1.1"
+    "jsdom": "^21.1.1",
+    "webpack": "^5.79.0"
   }
 }
