@@ -1,16 +1,16 @@
+// 引入依赖项
 const hacker = require("./snippets");
 
 // 构造解密器
 const a = hacker("1c46"),
     c = hacker.n(a),
-    e = hacker("b639");
-
-function f(e) {
-    return c.a.createHash("md5").update(e).digest()
-}
+    e = hacker("b639"),
+    f = x => {
+        return c.a.createHash("md5").update(x).digest()
+    };
 
 // 解密函数
-const decode = (t, o, n) => {
+function z(t, o, n) {
     if (!t)
         return null;
     // 对密钥进行编码
@@ -25,8 +25,11 @@ const decode = (t, o, n) => {
         s
 }
 
-const response = "_jsUyA02rwkOJ4enKX7c4dhd7CjvGkcKfbRx0BjNGW8rKhG_OzOeLONdJ2RyX_nrso1MljRLm4-IVGlBI7YnE38KNreaQwmX47AIWwlsV77vGCtLcc3Q4Jb9N4BGvUmhBn0gSp9AHb1pJqhDcZ-DHw==",
-    decodeKey = "ydsecret://query/key/B*RGygVywfNBwpmBaZg*WT7SIOUP2T0C9WHMZN39j^DAdaZhAnxvGcCY6VYFwnHl",
+// 用于执行解密的密钥
+const decodeKey = "ydsecret://query/key/B*RGygVywfNBwpmBaZg*WT7SIOUP2T0C9WHMZN39j^DAdaZhAnxvGcCY6VYFwnHl",
     decodeIv = "ydsecret://query/iv/C@lZe2YzHtZ2CYgaXKSVfsb7Y4QWHjITPPZ0nQp87fBeJ!Iv6v^6fvi2WN@bYpJ4";
 
-console.log(decode(response, decodeKey, decodeIv));
+// 封装解密函数，用于 Python 调用
+function decrypt(response) {
+    return z(response, decodeKey, decodeIv);
+}
