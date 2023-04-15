@@ -3,7 +3,7 @@
 - [算法分析](https://www.bilibili.com/video/BV1Lg4y1G7ou/)
 - [JavaScript算法处理](https://www.bilibili.com/video/BV1Lg4y1G7ou?p=2)
 
-## 分析过程
+## 响应解密分析过程
 
 1. 在 [有道翻译](https://fanyi.youdao.com/index.html#/) 抓包
 
@@ -96,16 +96,16 @@
 
     ```javascript
     "9f9d": function (t, e, n) {
-    ˰˰(function (e, n) {
-    ˰˰¦˰// var r; 
-    ˰˰¦˰// if (e.process && e.process.browser) r = "utf-8";else if (e.process && e.process.version) { 
-    ˰˰¦˰//   var i = parseInt(n.version.split(".")[0].slice(1), 10);
-    ˰˰¦˰//   r = i >= 6 ? "utf-8" : "binary";
-    ˰˰¦˰// } else
-    ˰˰¦˰˰˰r = "utf-8";
-    ˰˰¦˰t.exports = r;
-    ˰˰}).call(this, n("c8ba"), n("4362"));
-    },
+      (function (e, n) {
+        // var r; 
+        // if (e.process && e.process.browser) r = "utf-8";else if (e.process && e.process.version) { 
+        //   var i = parseInt(n.version.split(".")[0].slice(1), 10);
+        //   r = i >= 6 ? "utf-8" : "binary";
+        // } else
+          r = "utf-8";
+        t.exports = r;
+      }).call(this, n("c8ba"), n("4362"));
+    }
     ```
 
 12. 再次执行，可以顺利完成响应解密
@@ -127,4 +127,10 @@
     }
     ```
 
-    
+
+## 全流程实战
+
+- [`encrypt.js`](./encrypt.js) 涉及请求体签名的破解，此为原创内容，暂不提供教学讲解
+- [`main.py`](./main.py) 为全流程逆向成功的展示，用户可以输入原文并直接获得译文输出
+  - 输入简体中文，翻译为英文
+  - 输入其他语言文字（包括繁体中文），翻译为简体中文
